@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static chen.OrderSearch.orderSearch;
 import static chen.BinarySearch.binarySearch;
-import static chen.BlockSort.blockSort;
+import static chen.BlockSearch.blockSearch;
 
 public class Main {
 	
@@ -26,6 +26,16 @@ public class Main {
 		int searchKey = array[index];
 		init(searchKey, array);
 		int result = binarySearch(searchKey, array);
+		System.out.println("位于： " + (result + 1));
+	}
+	
+	@Test
+	public void TestBlockSearch(){
+		int[] array = new int[]{2, 4, 7, 11, 23, 44};
+		int[] block = new int[]{7, 44};
+		int searchKey = 7;
+		init(searchKey, array);
+		int result = blockSearch(block, array, searchKey, 3);
 		System.out.println("位于： " + (result + 1));
 	}
 	

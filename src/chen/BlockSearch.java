@@ -2,7 +2,7 @@ package chen;
 
 import static chen.BinarySearch.binarySearch;;
 
-class BlockSort {
+class BlockSearch {
 	
 	/**
 	 * 分块查找
@@ -17,10 +17,10 @@ class BlockSort {
 	 *            顺序表中各块的长度相等，为m
 	 * @return
 	 */
-	static int blockSort(int[] index, int[] st, int key, int m){
+	static int blockSearch(int[] index, int[] st, int key, int m){
 		// 在序列st数组中，用分块查找方法查找关键字为key的记录
 		// 1.在index[ ] 中折半查找，确定要查找的key属于哪个块中
-		int i = binarySearch(index, key);
+		int i = binarySearch(key, index);
 		if (i >= 0) {
 			int j = i > 0 ? i * m : i;
 			int len = (i + 1) * m;
